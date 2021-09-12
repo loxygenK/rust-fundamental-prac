@@ -14,20 +14,18 @@ const LYRICS_SEGMENTS: [&str; 12] = [
 ];
 
 fn the_twelve_days_of_christmas(verse: usize) -> String {
-    // Is this good? I don't know
     let lyrics_segms = LYRICS_SEGMENTS
         .iter()
+        .copied()
         .rev()
         .skip(11 - verse)
-        .map(|f| *f)
         .collect::<Vec<&str>>()
         .join("\n");
 
-    // (version 2)
+    // (version 3)
     // [T; N] does NOT implement IntoIterable, but
     // &[T; N] DOES implement. so when .into_iter() is called on [T; N]
     // the '&' is implied and the type of items in iterable becomes &T.
-    // And I was taught that there is a function called dereference so I uss it
     //
     // Reference: https://qiita.com/harvath/items/b79eaf61e73e79e3fc0f
 
