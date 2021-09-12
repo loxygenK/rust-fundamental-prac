@@ -19,14 +19,15 @@ fn the_twelve_days_of_christmas(verse: usize) -> String {
         .iter()
         .rev()
         .skip(11 - verse)
-        .map(|f| f.to_owned())
+        .map(|f| *f)
         .collect::<Vec<&str>>()
         .join("\n");
 
+    // (version 2)
     // [T; N] does NOT implement IntoIterable, but
     // &[T; N] DOES implement. so when .into_iter() is called on [T; N]
     // the '&' is implied and the type of items in iterable becomes &T.
-    // (This is why to_owned() is used but I'm not sure this is good practice)
+    // And I was taught that there is a function called dereference so I uss it
     //
     // Reference: https://qiita.com/harvath/items/b79eaf61e73e79e3fc0f
 
