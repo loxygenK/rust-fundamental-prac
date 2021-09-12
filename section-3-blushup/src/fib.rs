@@ -2,7 +2,7 @@ fn fib(n: u16) -> u32 {
     if n < 2 {
         return n.into();
     }
-    return fib(n-2) + fib(n-1);
+    fib(n-2) + fib(n-1)
 }
 
 #[test]
