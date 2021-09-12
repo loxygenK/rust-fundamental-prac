@@ -28,7 +28,7 @@ fn the_twelve_days_of_christmas(verse: usize) -> String {
     // the '&' is implied and the type of items in iterable becomes &T.
     // (This is why to_owned() is used but I'm not sure this is good practice)
     //
-    // Reference: https://t.co/NHsbsiNPur?amp=1
+    // Reference: https://qiita.com/harvath/items/b79eaf61e73e79e3fc0f
 
     format!("On the twelfth day of Christmas, my true love sent to me\n{}\n", lyrics_segms)
 }
